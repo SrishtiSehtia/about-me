@@ -1,3 +1,49 @@
 body {
-  font-family: 'Ubuntu', sans-serif;
+  /* font-family: 'Great Vibes', cursive; */
+  text-transform: uppercase;
+  letter-spacing: .02em;
+	color: #44545E;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  text-transform: none;
+	font-family: 'Lato', sans-serif;
+	line-height: 1.4;
+}
+
+html {
+	font-size: 15px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #aeafaf;
+  margin-right: 10em;
+}
+
+header {
+  background-image: url("../images/san-francisco.jpg");
+  background-size: cover;
+  background-position: center;
+	background-attachment: fixed;
+  max-width: 100%;
+  padding: 21%;
+}
+
+#about-me {
+  background-color: #f2d0ee;
+  padding: 5em 10em;
+	margin-top: 6em;
+}
+
+.hamburger {
+	display: none;
 }
