@@ -44,6 +44,20 @@ header {
 	margin-top: 6em;
 }
 
+#projects #wrap {
+  display: flex;
+}
+
+.one-project img {
+  width: 87%
+}
+
+#testimonials {
+  background-color: #f2d0ee;
+  padding: 5em 10em;
+	margin-top: 6em;
+}
+
 .hamburger {
 	display: none;
 }
