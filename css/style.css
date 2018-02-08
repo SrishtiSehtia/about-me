@@ -18,18 +18,19 @@ html {
 }
 
 .header-nav {
+  background-color: #e91e630f;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding-bottom: 1em;
   position: fixed;
-  background-color: white;
+  width: 100%;
+  z-index: 2;
 }
 
 a {
   text-decoration: none;
-  color: #aeafaf;
-  margin-right: 10em;
+  color: #44545E;
 }
 
 header {
@@ -39,6 +40,9 @@ header {
 	background-attachment: fixed;
   max-width: 100%;
   padding: 21%;
+}
+.current{
+  border: 1px solid red;
 }
 
 #about-me {

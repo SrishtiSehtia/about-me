@@ -32,15 +32,62 @@ $(function(){
   }
 
 
-$('.header-nav a').on('click', function(e) {
-  e.preventDefault();
-  var thisTarget = this.hash;
-  var targetOffset = $(thisTarget).offset().top;
-  $('html').animate({
-    scrollTop: targetOffset
-  }, 600, function(){
-    window.location.hash = thisTarget;
+  $('.header-nav a').on('click', function(e) {
+    e.preventDefault();
+    var thisTarget = this.hash;
+    var targetOffset = $(thisTarget).offset().top;
+    $('html').animate({
+      scrollTop: targetOffset
+    }, 600, function(){
+      window.location.hash = thisTarget;
+    });
   });
-});
+
+    // -----------------------------
+  // Highlight Nav Links on Scroll
+  // -----------------------------
+  // cache the navigation links
+  var $navigationLinks = $('.header-nav a');
+  // cache (in reversed order) the sections
+  var $sections = $($("section").get().reverse());
+
+  // map each section id to their corresponding navigation link
+  var sectionIdTonavigationLink = {};
+  $sections.each(function() {
+      var id = $(this).attr('id');
+      sectionIdTonavigationLink[id] = $('a[href="#' + id + '"]');
+  });
+
+  console.log(sectionIdTonavigationLink)
+
+  function highlightNavigation() {
+    // get the current vertical position of the scroll bar
+    var scrollPosition = $(window).scrollTop();
+
+    // iterate the sections
+    $sections.each(function() {
+        var currentSection = $(this);
+        // get the position of the section
+        var sectionTop = currentSection.offset().top - 71;
+
+        // if the user has scrolled over the top of the section
+        if (scrollPosition >= sectionTop) {
+            // get the section id
+            var id = currentSection.attr('id');
+            // get the corresponding navigation link
+            var $navigationLink = sectionIdTonavigationLink[id];
+            // if the link is not current
+            if (!$navigationLink.hasClass('current')) {
+                // remove .current class from all the links
+                $navigationLinks.removeClass('current');
+                // add .current class to the current link
+                $navigationLink.addClass('current');
+            }
+            // we have found our section, so we return false to exit the each loop
+            return false;
+        }
+    });
+  }
+  $(window).scroll(highlightNavigation);
 
 });
