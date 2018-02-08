@@ -22,15 +22,26 @@ html {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding-bottom: 1em;
+  padding: 1.5em;
   position: fixed;
   width: 100%;
   z-index: 2;
 }
 
+.header-nav .current{
+  border-bottom: 2px solid #a3a3a3;
+}
+
 a {
   text-decoration: none;
   color: #44545E;
+}
+
+a:hover {
+  /* outline: none;
+  text-decoration: none; */
+  transition: all .2s ease-in-out;
+  color: white;
 }
 
 header {
@@ -41,9 +52,10 @@ header {
   max-width: 100%;
   padding: 21%;
 }
-.current{
-  border: 1px solid red;
-}
+
+/* header h1 {
+  font-size: 5em;
+} */
 
 #about-me {
   background-color: #f2d0ee;
