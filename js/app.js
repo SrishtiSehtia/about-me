@@ -90,4 +90,9 @@ $(function(){
   }
   $(window).scroll(highlightNavigation);
 
+  $('.hamburger').on('click', function (e) {
+    e.preventDefault();
+    $('.header-nav').toggleClass('open-menu');
+  });
+
 });

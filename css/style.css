@@ -46,6 +46,10 @@ header {
 	background-attachment: fixed;
   max-width: 100%;
   padding: 21%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 16em;
 }
 
 .header-nav .current{
@@ -61,11 +65,6 @@ a:hover {
   transition: all .2s ease-in-out;
   color: white;
 }
-
-
-/* header h1 {
-  font-size: 5em;
-} */
 
 #about-me {
   background-color: #e91e630f;
@@ -174,13 +173,17 @@ input, textarea{
 }
 
 #contact-form input[type=submit] {
-  height: 4em;
 	color: #44545E;
 	background-color: #aeafaf;
   transition: all .3s ease-in-out;
 }
 
 #contact-form input[type=submit]:hover{
+	background-color: #44545E;
+	color: white;
+}
+
+#projects button:hover {
 	background-color: #44545E;
 	color: white;
 }
@@ -194,6 +197,7 @@ footer {
 
 footer nav {
   text-align: center;
+  margin-bottom: -2em;
 }
 
 i {
@@ -203,11 +207,76 @@ i {
 
 .copyright {
   border-top: 2px solid black;
-  padding: 3% 0;
+  padding: 2% 0;
   margin-top: 3em;
 	margin-bottom: 0;
 }
 
 .hamburger {
 	display: none;
+}
+
+/* ----------------------------------------
+Media Queries
+------------------------------------------- */
+@media screen and (max-width: 700px) {
+  .hamburger {
+		display: block;
+		color: #44545E;
+		font-size: 2rem;
+		position: absolute;
+		top: 18px;
+		left: 2px;
+	}
+
+  .header-nav {
+    display: none;
+	}
+
+  .open-menu {
+    display: flex;
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+  }
+
+	/* .archive {
+	  display: flex;
+	  flex-direction: column;
+	}
+
+	.about-article {
+		padding: 2em 4em;
+	}
+
+	.gallery {
+		padding: 4em 2em;
+	} */
+
+  #about-me {
+    padding: 5em 3em;
+  }
+
+  #projects #wrap {
+    flex-direction: column;
+  }
+
+  #projects article {
+    margin-bottom: 2em;
+  }
+
+  #projects .buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3em;
+  }
+
+  #projects button {
+    margin-bottom: 2em;
+    padding: 1em;
+  }
+
+  #projects {
+    margin: 0;
+  }
+
 }
