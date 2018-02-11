@@ -88,6 +88,10 @@ a:hover {
   width: 87%
 }
 
+.one-project img:hover {
+	opacity: .6;
+}
+
 #projects button {
   border: 2px solid #44545E;
   color: #44545E;
@@ -276,7 +280,7 @@ Media Queries
   }
 
   #projects {
-    margin: 0;
+    margin: 3em;
   }
 
 }
