@@ -271,3 +271,20 @@ Media Queries
   }
 
 }
+
+@media screen and (max-width: 600px) {
+  #name-and-email {
+    flex-direction: column;
+  }
+
+  #name-and-email input {
+    width: 100%;
+  }
+  #name-and-email input[type=email] {
+    margin-left: 0;
+  }
+
+  #projects button:first-child {
+    margin-bottom: 0.5em;
+  }
+}
