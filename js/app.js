@@ -1,6 +1,6 @@
 $(function(){
 
-  // Carousel
+  // ----------- Carousel -----------
   var currentSlideIndex = 0;
   var numberTestimonials = $('#testimonials .one-testimonial p').length;
 
@@ -32,23 +32,24 @@ $(function(){
     // how much distance to slide to the right
     var amountToTranslate = -((100 / numberTestimonials) * currentSlideIndex);
     $('#testimonials').css('transform', 'translateX(' + amountToTranslate + '%)');
-    // move the carousel indicators consecutively to represnt current slide 
+    // move the carousel indicators consecutively to represnt current slide
     $('.carousel-indicators li').removeClass('active');
     $('.carousel-indicators li[data-slide-number="' + currentSlideIndex + '"]').addClass('active');
   }
 
 
+  // ----------- Smooth Scrolling -----------
   $('.header-nav a').on('click', function(e) {
     e.preventDefault();
+    // get the href/id of nav link clicked on
     var thisTarget = this.hash;
+    // get the position of the section that the id corresponds to
     var targetOffset = $(thisTarget).offset().top;
-    $('html').animate({
-      scrollTop: targetOffset
-    }, 600, function(){
-      window.location.hash = thisTarget;
-    });
+    // smooth scroll from the nav link to the corresponding section
+    $('html').animate({scrollTop: targetOffset}, 600);
   });
 
+  // ----------- Nav Highlighting -----------
   var $navigationLinks = $('.header-nav a');
   var $sections = $($("section").get().reverse());
 
