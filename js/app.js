@@ -1,16 +1,21 @@
 $(function(){
 
-  var currentSlideIndex = 2;
+  // Carousel
+  var currentSlideIndex = 0;
   var numberTestimonials = $('#testimonials .one-testimonial p').length;
 
+  // make testimonials appear as inline rathen than block elements
   $('#testimonials').css('width', numberTestimonials * 100 + '%');
+  // show only one single testimonial on the page at a time
   $('#testimonials article').css('width', 100 / numberTestimonials + '%');
 
   var carouselTimer = setInterval(timerTransition, 3000);
 
   function timerTransition() {
     currentSlideIndex = (currentSlideIndex === (numberTestimonials - 1)
+    // if current testimonial is the last one, reset to first testimonial
       ? 0
+    // otherwise, show next testimonial
       : currentSlideIndex + 1
     );
     transitionSlides();
@@ -24,8 +29,10 @@ $(function(){
   });
 
   function transitionSlides() {
+    // how much distance to slide to the right
     var amountToTranslate = -((100 / numberTestimonials) * currentSlideIndex);
     $('#testimonials').css('transform', 'translateX(' + amountToTranslate + '%)');
+    // move the carousel indicators consecutively to represnt current slide 
     $('.carousel-indicators li').removeClass('active');
     $('.carousel-indicators li[data-slide-number="' + currentSlideIndex + '"]').addClass('active');
   }
@@ -68,7 +75,7 @@ $(function(){
           $navigationLinks.removeClass('current');
           $navigationLink.addClass('current');
         }
-        return;
+        return false;
       }
     });
   }

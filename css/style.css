@@ -59,10 +59,10 @@ header {
 a {
   text-decoration: none;
   color: #44545E;
+  transition: all .2s ease-in-out;
 }
 
 a:hover {
-  transition: all .2s ease-in-out;
   color: white;
 }
 
@@ -76,12 +76,12 @@ a:hover {
   margin: 5em 0;
 }
 
-#projects h2 {
-  margin-bottom: 2em;
-}
-
 #projects #wrap {
   display: flex;
+}
+
+#projects h2 {
+  margin-bottom: 2em;
 }
 
 .one-project img {
@@ -92,6 +92,10 @@ a:hover {
 	opacity: .6;
 }
 
+#testimonials article {
+  padding: 3em;
+}
+
 #projects button {
   border: 2px solid #44545E;
   color: #44545E;
@@ -100,6 +104,11 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 1.2px;
   transition: all .3s ease-in-out;
+}
+
+#projects button:hover {
+	background-color: #44545E;
+	color: white;
 }
 
 #testimonials {
@@ -135,10 +144,6 @@ a:hover {
 .carousel-indicators .active {
   background-color: #2C3E50;
   border: 2px solid #2C3E50;
-}
-
-#testimonials article {
-  padding: 3em;
 }
 
 #contact-form {
@@ -187,11 +192,6 @@ input, textarea{
 	color: white;
 }
 
-#projects button:hover {
-	background-color: #44545E;
-	color: white;
-}
-
 footer {
   background-color: #CFA0AA;;
   text-align: center;
@@ -223,7 +223,7 @@ i {
 /* ----------------------------------------
 Media Queries
 ------------------------------------------- */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .hamburger {
 		display: block;
 		color: #44545E;
@@ -242,19 +242,6 @@ Media Queries
     max-height: 500px;
     transition: max-height 0.25s ease-in;
   }
-
-	/* .archive {
-	  display: flex;
-	  flex-direction: column;
-	}
-
-	.about-article {
-		padding: 2em 4em;
-	}
-
-	.gallery {
-		padding: 4em 2em;
-	} */
 
   #about-me {
     padding: 5em 3em;
