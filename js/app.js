@@ -92,6 +92,11 @@ $(function(){
   }
   $(window).scroll(highlightNavigation);
 
+  // ----------- Form submission -----------
+  $('#contact-form input[type=submit]').on('click', function(){
+    $('#contact-form').html('thank you!').addClass('form-submitted');
+  })
+
   // ----------- Hamburger hide/show -----------
   $('.hamburger').on('click', function (e) {
     e.preventDefault();

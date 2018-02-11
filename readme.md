@@ -1,5 +1,5 @@
 Technologies used:
-CSS3, HTML5, JavaScript, jQuery
+CSS3, HTML5, JavaScript, jQuery, formspree
 
 My process/approach:
 I started out by creating the structure of my website with HTML. I then added styling through CSS. Lastly, I added functionality and special effects such as the carousel, nav smooth scrolling and highlighting through jQuery.

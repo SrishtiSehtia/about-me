@@ -192,6 +192,11 @@ input, textarea{
 	color: white;
 }
 
+.form-submitted {
+  font-size: 2em;
+  letter-spacing: 6px;
+}
+
 footer {
   background-color: #CFA0AA;;
   text-align: center;
