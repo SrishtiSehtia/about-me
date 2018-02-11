@@ -50,28 +50,38 @@ $(function(){
   });
 
   // ----------- Nav Highlighting -----------
+  // save all navigation links in variable
   var $navigationLinks = $('.header-nav a');
+  // save all sections in an array and then reverse for traversal
   var $sections = $($("section").get().reverse());
 
+  // create an object to map each nav link to its section id
   var sectionIdTonavigationLink = {};
+  // iterate through each section
   $sections.each(function() {
+    // get each section's id
     var id = $(this).attr('id');
+    // save the id's in the object
     sectionIdTonavigationLink[id] = $('a[href="#' + id + '"]');
   });
 
-  console.log(sectionIdTonavigationLink)
 
   function highlightNavigation() {
+    // monitor position of mouse
     var scrollPosition = $(window).scrollTop();
 
     $sections.each(function() {
+      // monitor position of section
       var currentSection = $(this);
       var sectionTop = currentSection.offset().top - 100;
 
+      // if we are on or past the section,
       if (scrollPosition >= sectionTop) {
+        // get the section id
         var id = currentSection.attr('id');
+        // get the corresponding nav link
         var $navigationLink = sectionIdTonavigationLink[id];
-        console.log(sectionIdTonavigationLink[id]);
+        // mark the nav link with a class that highlights it
         if (!$navigationLink.hasClass('current')) {
           $navigationLinks.removeClass('current');
           $navigationLink.addClass('current');
@@ -82,6 +92,7 @@ $(function(){
   }
   $(window).scroll(highlightNavigation);
 
+  // ----------- Hamburger hide/show -----------
   $('.hamburger').on('click', function (e) {
     e.preventDefault();
     $('.header-nav').toggleClass('open-menu');
