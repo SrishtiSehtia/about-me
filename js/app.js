@@ -9,7 +9,8 @@ $(function(){
   // show only one single testimonial on the page at a time
   $('#testimonials article').css('width', 100 / numberTestimonials + '%');
 
-  var carouselTimer = setInterval(timerTransition, 3000);
+  // run the timerTransition function every 5 seconds
+  var carouselTimer = setInterval(timerTransition, 10000);
 
   function timerTransition() {
     currentSlideIndex = (currentSlideIndex === (numberTestimonials - 1)
@@ -21,9 +22,10 @@ $(function(){
     transitionSlides();
   }
 
+  // take user to the testimonial corresponding to the indicator clicked
   $('.carousel-indicators').on('click', 'li', function () {
     clearInterval(carouselTimer);
-    carouselTimer = setInterval(timerTransition, 5000);
+    carouselTimer = setInterval(timerTransition, 10000);
     currentSlideIndex = $(this).data('slide-number');
     transitionSlides();
   });
@@ -36,7 +38,6 @@ $(function(){
     $('.carousel-indicators li').removeClass('active');
     $('.carousel-indicators li[data-slide-number="' + currentSlideIndex + '"]').addClass('active');
   }
-
 
   // ----------- Smooth Scrolling -----------
   $('.header-nav a').on('click', function(e) {
