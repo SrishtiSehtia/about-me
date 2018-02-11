@@ -264,6 +264,11 @@ Media Queries
   #projects button {
     margin-bottom: 2em;
     padding: 1em;
+    font-weight: 500;
+  }
+
+  #projects button:first-child {
+    margin-bottom: 0.5em;
   }
 
   #projects {
@@ -272,7 +277,7 @@ Media Queries
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   #name-and-email {
     flex-direction: column;
   }
@@ -284,7 +289,4 @@ Media Queries
     margin-left: 0;
   }
 
-  #projects button:first-child {
-    margin-bottom: 0.5em;
-  }
 }
