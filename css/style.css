@@ -229,25 +229,6 @@ i {
 Media Queries
 ------------------------------------------- */
 @media screen and (max-width: 900px) {
-  .hamburger {
-		display: block;
-		color: #44545E;
-		font-size: 2rem;
-		position: absolute;
-		top: 18px;
-		left: 2px;
-	}
-
-  .header-nav {
-    display: none;
-	}
-
-  .open-menu {
-    display: flex;
-    max-height: 500px;
-    transition: max-height 0.25s ease-in;
-  }
-
   #about-me {
     padding: 5em 3em;
   }
@@ -279,7 +260,6 @@ Media Queries
   #projects {
     margin: 3em;
   }
-
 }
 
 @media screen and (max-width: 700px) {
@@ -290,8 +270,29 @@ Media Queries
   #name-and-email input {
     width: 100%;
   }
+
   #name-and-email input[type=email] {
     margin-left: 0;
   }
+}
 
+@media screen and (max-width: 550px) {
+  .hamburger {
+    display: block;
+    color: #44545E;
+    font-size: 2rem;
+    position: absolute;
+    top: 18px;
+    left: 2px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .open-menu {
+    display: flex;
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+  }
 }
